@@ -1,0 +1,73 @@
+<h2>Show guest</h2>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @guest.email %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @guest.name %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @guest.phone %>
+  </li>
+
+  <li>
+    <strong>Ok to text:</strong>
+    <%= @guest.ok_to_text %>
+  </li>
+
+  <li>
+    <strong>Family members:</strong>
+    <%= @guest.family_members %>
+  </li>
+
+  <li>
+    <strong>Language:</strong>
+    <%= @guest.language %>
+  </li>
+
+  <li>
+    <strong>Kosher:</strong>
+    <%= @guest.kosher %>
+  </li>
+
+  <li>
+    <strong>Halal:</strong>
+    <%= @guest.halal %>
+  </li>
+
+  <li>
+    <strong>Dairy:</strong>
+    <%= @guest.dairy %>
+  </li>
+
+  <li>
+    <strong>Vegetarian:</strong>
+    <%= @guest.vegetarian %>
+  </li>
+
+  <li>
+    <strong>Vegan:</strong>
+    <%= @guest.vegan %>
+  </li>
+
+  <li>
+    <strong>Allergies:</strong>
+    <%= @guest.allergies %>
+  </li>
+
+  <li>
+    <strong>Dietary restriction:</strong>
+    <%= @guest.dietary_restriction %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: guest_path(@conn, :edit, @guest) %>
+<%= link "Back", to: guest_path(@conn, :index) %>

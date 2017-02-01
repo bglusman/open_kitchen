@@ -1,0 +1,6 @@
+<h2>New meal package</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: meal_package_path(@conn, :create) %>
+
+<%= link "Back", to: meal_package_path(@conn, :index) %>

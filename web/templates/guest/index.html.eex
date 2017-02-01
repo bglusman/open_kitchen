@@ -1,0 +1,50 @@
+<h2>Listing guests</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Ok to text</th>
+      <th>Family members</th>
+      <th>Language</th>
+      <th>Kosher</th>
+      <th>Halal</th>
+      <th>Dairy</th>
+      <th>Vegetarian</th>
+      <th>Vegan</th>
+      <th>Allergies</th>
+      <th>Dietary restriction</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for guest <- @guests do %>
+    <tr>
+      <td><%= guest.email %></td>
+      <td><%= guest.name %></td>
+      <td><%= guest.phone %></td>
+      <td><%= guest.ok_to_text %></td>
+      <td><%= guest.family_members %></td>
+      <td><%= guest.language %></td>
+      <td><%= guest.kosher %></td>
+      <td><%= guest.halal %></td>
+      <td><%= guest.dairy %></td>
+      <td><%= guest.vegetarian %></td>
+      <td><%= guest.vegan %></td>
+      <td><%= guest.allergies %></td>
+      <td><%= guest.dietary_restriction %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: guest_path(@conn, :show, guest), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: guest_path(@conn, :edit, guest), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: guest_path(@conn, :delete, guest), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New guest", to: guest_path(@conn, :new) %>

@@ -1,0 +1,28 @@
+<h2>Listing meal component</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Meal package</th>
+      <th>Supply</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for meal_component <- @meal_component do %>
+    <tr>
+      <td><%= meal_component.meal_package_id %></td>
+      <td><%= meal_component.supply_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: meal_component_path(@conn, :show, meal_component), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: meal_component_path(@conn, :edit, meal_component), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: meal_component_path(@conn, :delete, meal_component), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New meal component", to: meal_component_path(@conn, :new) %>

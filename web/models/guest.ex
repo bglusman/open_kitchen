@@ -15,6 +15,8 @@ defmodule OpenKitchen.Guest do
     field :vegan, :boolean, default: false
     field :allergies, :string
     field :dietary_restriction, :string
+    has_many :meal_packages, OpenKitchen.MealPackage, foreign_key: :guest_id
+
 
     timestamps()
   end

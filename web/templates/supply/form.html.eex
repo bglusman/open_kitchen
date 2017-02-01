@@ -1,0 +1,71 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :name, class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :location, class: "control-label" %>
+    <%= text_input f, :location, class: "form-control" %>
+    <%= error_tag f, :location %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :portions, class: "control-label" %>
+    <%= number_input f, :portions, class: "form-control" %>
+    <%= error_tag f, :portions %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :portion_weight_in_grams, class: "control-label" %>
+    <%= number_input f, :portion_weight_in_grams, class: "form-control" %>
+    <%= error_tag f, :portion_weight_in_grams %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :kosher, class: "control-label" %>
+    <%= checkbox f, :kosher, class: "form-control" %>
+    <%= error_tag f, :kosher %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :halal, class: "control-label" %>
+    <%= checkbox f, :halal, class: "form-control" %>
+    <%= error_tag f, :halal %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :dairy, class: "control-label" %>
+    <%= checkbox f, :dairy, class: "form-control" %>
+    <%= error_tag f, :dairy %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :vegetarian, class: "control-label" %>
+    <%= checkbox f, :vegetarian, class: "form-control" %>
+    <%= error_tag f, :vegetarian %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :vegan, class: "control-label" %>
+    <%= checkbox f, :vegan, class: "form-control" %>
+    <%= error_tag f, :vegan %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :food_group, class: "control-label" %>
+    <%= number_input f, :food_group, class: "form-control" %>
+    <%= error_tag f, :food_group %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

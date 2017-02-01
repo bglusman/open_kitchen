@@ -17,6 +17,10 @@ defmodule OpenKitchen.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/guests", GuestController
+    resources "/supplies", SupplyController
+    resources "/meal_packages", MealPackageController
+    resources "/meal_components", MealComponentController
   end
 
   # Other scopes may use custom stacks.

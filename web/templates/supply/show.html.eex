@@ -1,0 +1,58 @@
+<h2>Show supply</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @supply.name %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @supply.location %>
+  </li>
+
+  <li>
+    <strong>Portions:</strong>
+    <%= @supply.portions %>
+  </li>
+
+  <li>
+    <strong>Portion weight in grams:</strong>
+    <%= @supply.portion_weight_in_grams %>
+  </li>
+
+  <li>
+    <strong>Kosher:</strong>
+    <%= @supply.kosher %>
+  </li>
+
+  <li>
+    <strong>Halal:</strong>
+    <%= @supply.halal %>
+  </li>
+
+  <li>
+    <strong>Dairy:</strong>
+    <%= @supply.dairy %>
+  </li>
+
+  <li>
+    <strong>Vegetarian:</strong>
+    <%= @supply.vegetarian %>
+  </li>
+
+  <li>
+    <strong>Vegan:</strong>
+    <%= @supply.vegan %>
+  </li>
+
+  <li>
+    <strong>Food group:</strong>
+    <%= @supply.food_group %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: supply_path(@conn, :edit, @supply) %>
+<%= link "Back", to: supply_path(@conn, :index) %>

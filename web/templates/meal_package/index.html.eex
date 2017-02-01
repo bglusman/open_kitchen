@@ -1,0 +1,34 @@
+<h2>Listing meal packages</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Servings</th>
+      <th>Ready</th>
+      <th>Picked up</th>
+      <th>Expiration</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for meal_package <- @meal_packages do %>
+    <tr>
+      <td><%= meal_package.location %></td>
+      <td><%= meal_package.servings %></td>
+      <td><%= meal_package.ready %></td>
+      <td><%= meal_package.picked_up %></td>
+      <td><%= meal_package.expiration %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: meal_package_path(@conn, :show, meal_package), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: meal_package_path(@conn, :edit, meal_package), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: meal_package_path(@conn, :delete, meal_package), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New meal package", to: meal_package_path(@conn, :new) %>

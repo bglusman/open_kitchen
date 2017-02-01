@@ -1,0 +1,33 @@
+<h2>Show meal package</h2>
+
+<ul>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @meal_package.location %>
+  </li>
+
+  <li>
+    <strong>Servings:</strong>
+    <%= @meal_package.servings %>
+  </li>
+
+  <li>
+    <strong>Ready:</strong>
+    <%= @meal_package.ready %>
+  </li>
+
+  <li>
+    <strong>Picked up:</strong>
+    <%= @meal_package.picked_up %>
+  </li>
+
+  <li>
+    <strong>Expiration:</strong>
+    <%= @meal_package.expiration %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: meal_package_path(@conn, :edit, @meal_package) %>
+<%= link "Back", to: meal_package_path(@conn, :index) %>

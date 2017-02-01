@@ -1,0 +1,44 @@
+<h2>Listing supplies</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Portions</th>
+      <th>Portion weight in grams</th>
+      <th>Kosher</th>
+      <th>Halal</th>
+      <th>Dairy</th>
+      <th>Vegetarian</th>
+      <th>Vegan</th>
+      <th>Food group</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for supply <- @supplies do %>
+    <tr>
+      <td><%= supply.name %></td>
+      <td><%= supply.location %></td>
+      <td><%= supply.portions %></td>
+      <td><%= supply.portion_weight_in_grams %></td>
+      <td><%= supply.kosher %></td>
+      <td><%= supply.halal %></td>
+      <td><%= supply.dairy %></td>
+      <td><%= supply.vegetarian %></td>
+      <td><%= supply.vegan %></td>
+      <td><%= supply.food_group %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: supply_path(@conn, :show, supply), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: supply_path(@conn, :edit, supply), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: supply_path(@conn, :delete, supply), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New supply", to: supply_path(@conn, :new) %>

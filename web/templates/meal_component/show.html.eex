@@ -1,0 +1,18 @@
+<h2>Show meal component</h2>
+
+<ul>
+
+  <li>
+    <strong>Meal package:</strong>
+    <%= @meal_component.meal_package_id %>
+  </li>
+
+  <li>
+    <strong>Supply:</strong>
+    <%= @meal_component.supply_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: meal_component_path(@conn, :edit, @meal_component) %>
+<%= link "Back", to: meal_component_path(@conn, :index) %>
