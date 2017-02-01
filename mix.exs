@@ -37,6 +37,7 @@ defmodule OpenKitchen.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:ecto_enum, "~> 1.0"},
      {:ex_admin, git: "https://github.com/smpallen99/ex_admin/"},
+     {:guardian, "~> 0.14"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]
   end

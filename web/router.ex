@@ -1,5 +1,6 @@
 defmodule OpenKitchen.Router do
   use OpenKitchen.Web, :router
+  use ExAdmin.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -11,6 +12,11 @@ defmodule OpenKitchen.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/admin", ExAdmin do
+    pipe_through :browser
+    admin_routes()
   end
 
   scope "/", OpenKitchen do

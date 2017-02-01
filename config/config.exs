@@ -17,6 +17,23 @@ config :open_kitchen, OpenKitchen.Endpoint,
   pubsub: [name: OpenKitchen.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "MyApp",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: true, # optional
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY"),
+  serializer: MyApp.GuardianSerializer
+
+config :ex_admin,
+  repo: OpenKitchen.Repo,
+  module: OpenKitchen,
+  modules: [
+    OpenKitchen.ExAdmin.Dashboard,
+  ]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -25,3 +42,6 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+config :xain, :after_callback, {Phoenix.HTML, :raw}
+
