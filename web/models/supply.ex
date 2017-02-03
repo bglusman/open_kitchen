@@ -11,7 +11,7 @@ defmodule OpenKitchen.Supply do
     field :dairy, :boolean, default: false
     field :vegetarian, :boolean, default: false
     field :vegan, :boolean, default: false
-    field :food_group, :integer
+    field :food_group, FoodGroup
 
     timestamps()
   end

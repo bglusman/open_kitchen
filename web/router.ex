@@ -27,6 +27,8 @@ defmodule OpenKitchen.Router do
     resources "/supplies", SupplyController
     resources "/meal_packages", MealPackageController
     resources "/meal_components", MealComponentController
+    resources "/languages", LanguageController
+    resources "/kitchens", KitchenController
   end
 
   # Other scopes may use custom stacks.

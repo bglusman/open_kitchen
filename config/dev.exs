@@ -36,8 +36,10 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :open_kitchen, OpenKitchen.Repo,
   adapter: Ecto.Adapters.Postgres,
+  types: OpenKitchen.PostgresTypes,
   username: "postgres",
   password: "postgres",
   database: "open_kitchen_dev",
   hostname: "localhost",
   pool_size: 10
+

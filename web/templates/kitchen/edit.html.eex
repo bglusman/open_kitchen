@@ -1,0 +1,6 @@
+<h2>Edit kitchen</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: kitchen_path(@conn, :update, @kitchen) %>
+
+<%= link "Back", to: kitchen_path(@conn, :index) %>

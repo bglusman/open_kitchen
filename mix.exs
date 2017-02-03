@@ -39,6 +39,7 @@ defmodule OpenKitchen.Mixfile do
      {:ex_admin, git: "https://github.com/smpallen99/ex_admin/"},
      {:guardian, "~> 0.14"},
      {:gettext, "~> 0.11"},
+     {:geo, "~> 1.3"},
      {:cowboy, "~> 1.0"}]
   end
 

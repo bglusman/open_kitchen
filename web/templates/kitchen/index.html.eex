@@ -1,0 +1,32 @@
+<h2>Listing kitchens</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Kitchen name</th>
+      <th>Location</th>
+      <th>Max occupancy</th>
+      <th>Square meterage storage</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for kitchen <- @kitchens do %>
+    <tr>
+      <td><%= kitchen.kitchen_name %></td>
+      <td><%= kitchen.location %></td>
+      <td><%= kitchen.max_occupancy %></td>
+      <td><%= kitchen.square_meterage_storage %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: kitchen_path(@conn, :show, kitchen), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: kitchen_path(@conn, :edit, kitchen), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: kitchen_path(@conn, :delete, kitchen), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New kitchen", to: kitchen_path(@conn, :new) %>

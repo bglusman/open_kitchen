@@ -1,0 +1,28 @@
+<h2>Show kitchen</h2>
+
+<ul>
+
+  <li>
+    <strong>Kitchen name:</strong>
+    <%= @kitchen.kitchen_name %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @kitchen.location %>
+  </li>
+
+  <li>
+    <strong>Max occupancy:</strong>
+    <%= @kitchen.max_occupancy %>
+  </li>
+
+  <li>
+    <strong>Square meterage storage:</strong>
+    <%= @kitchen.square_meterage_storage %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: kitchen_path(@conn, :edit, @kitchen) %>
+<%= link "Back", to: kitchen_path(@conn, :index) %>
