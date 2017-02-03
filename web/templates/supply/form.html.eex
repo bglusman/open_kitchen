@@ -59,11 +59,11 @@
     <%= error_tag f, :vegan %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :food_group, class: "control-label" %>
-    <%= number_input f, :food_group, class: "form-control" %>
-    <%= error_tag f, :food_group %>
-  </div>
+  <%# <div class="form-group"> %>
+    <%# <%= label f, :food_group, class: "control-label" %>
+    <%# <%= number_input f, :food_group, class: "form-control" %>
+    <%# <%= error_tag f, :food_group %>
+  <%# </div> %>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

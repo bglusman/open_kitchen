@@ -7,7 +7,6 @@ defmodule OpenKitchen.Guest do
     field :phone, :string
     field :ok_to_text, :boolean, default: false
     field :family_members, :integer
-    field :language, :integer
     field :kosher, :boolean, default: false
     field :halal, :boolean, default: false
     field :dairy, :boolean, default: false
@@ -15,7 +14,11 @@ defmodule OpenKitchen.Guest do
     field :vegan, :boolean, default: false
     field :allergies, :string
     field :dietary_restriction, :string
+    field :location, Geo.Point
     has_many :meal_packages, OpenKitchen.MealPackage, foreign_key: :guest_id
+    belongs_to :language, OpenKitchen.Language
+    belongs_to :kitchen, OpenKitchen.Kitchen
+
 
 
     timestamps()

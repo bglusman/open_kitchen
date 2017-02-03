@@ -1,8 +1,8 @@
-defmodule OpenKitchen.MealComponent do
+defmodule OpenKitchen.MealSelection do
   use OpenKitchen.Web, :model
 
-  schema "meal_component" do
-    belongs_to :supply, OpenKitchen.Supply
+  schema "meal_selections" do
+    belongs_to :meal_option, OpenKitchen.MealOption
     belongs_to :meal_package, OpenKitchen.MealPackage
 
     timestamps()
@@ -13,7 +13,7 @@ defmodule OpenKitchen.MealComponent do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:meal_package_id, :supply_id])
-    |> validate_required([:meal_package_id, :supply_id])
+    |> cast(params, [])
+    |> validate_required([])
   end
 end

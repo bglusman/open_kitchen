@@ -1,0 +1,23 @@
+<h2>Show meal option</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @meal_option.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @meal_option.description %>
+  </li>
+
+  <li>
+    <strong>Food groups:</strong>
+    <%= @meal_option.food_groups %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: meal_option_path(@conn, :edit, @meal_option) %>
+<%= link "Back", to: meal_option_path(@conn, :index) %>

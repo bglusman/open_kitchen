@@ -12,6 +12,9 @@ defmodule OpenKitchen.Supply do
     field :vegetarian, :boolean, default: false
     field :vegan, :boolean, default: false
     field :food_group, FoodGroup
+    has_many :meal_components, OpenKitchen.MealComponent, foreign_key: :supply_id
+    has_many :meal_packages,through: [:meal_components, :meal_package]
+    belongs_to :kitchen, OpenKitchen.Kitchen
 
     timestamps()
   end

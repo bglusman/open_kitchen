@@ -1,0 +1,6 @@
+<h2>New meal option</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: meal_option_path(@conn, :create) %>
+
+<%= link "Back", to: meal_option_path(@conn, :index) %>

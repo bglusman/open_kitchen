@@ -25,8 +25,10 @@ defmodule OpenKitchen.Router do
     get "/", PageController, :index
     resources "/guests", GuestController
     resources "/supplies", SupplyController
-    resources "/meal_packages", MealPackageController
     resources "/meal_components", MealComponentController
+    resources "/meal_options", MealOptionController
+    resources "/meal_selection", MealSelectionController
+    resources "/meal_packages", MealPackageController
     resources "/languages", LanguageController
     resources "/kitchens", KitchenController
   end

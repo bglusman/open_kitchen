@@ -1,0 +1,28 @@
+<h2>Listing meal selections</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Meal option</th>
+      <th>Meal package</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for meal_selection <- @meal_selections do %>
+    <tr>
+      <td><%= meal_selection.meal_option_id %></td>
+      <td><%= meal_selection.meal_package_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: meal_selection_path(@conn, :show, meal_selection), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: meal_selection_path(@conn, :edit, meal_selection), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: meal_selection_path(@conn, :delete, meal_selection), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New meal selection", to: meal_selection_path(@conn, :new) %>
