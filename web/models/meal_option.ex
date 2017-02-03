@@ -20,6 +20,6 @@ defmodule OpenKitchen.MealOption do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :description, :food_groups])
-    |> validate_required([:name, :description, :food_groups])
+    |> validate_required([:name, :food_groups])
   end
 end

@@ -18,6 +18,6 @@ defmodule OpenKitchen.Kitchen do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:kitchen_name, :location, :max_occupancy, :square_meterage_storage])
-    |> validate_required([:kitchen_name, :location, :max_occupancy, :square_meterage_storage])
+    |> validate_required([:kitchen_name, :location, :max_occupancy])
   end
 end

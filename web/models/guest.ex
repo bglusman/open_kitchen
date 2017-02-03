@@ -19,8 +19,6 @@ defmodule OpenKitchen.Guest do
     belongs_to :language, OpenKitchen.Language
     belongs_to :kitchen, OpenKitchen.Kitchen
 
-
-
     timestamps()
   end
 
@@ -29,7 +27,7 @@ defmodule OpenKitchen.Guest do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:email, :name, :phone, :ok_to_text, :family_members, :language, :kosher, :halal, :dairy, :vegetarian, :vegan, :allergies, :dietary_restriction])
-    |> validate_required([:email, :name, :phone, :ok_to_text, :family_members, :language, :kosher, :halal, :dairy, :vegetarian, :vegan, :allergies, :dietary_restriction])
+    |> cast(params, [:email, :name, :location, :phone, :ok_to_text, :family_members, :kosher, :halal, :dairy, :vegetarian, :vegan, :allergies, :dietary_restriction])
+    |> validate_required([:name, :family_members])
   end
 end
