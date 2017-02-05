@@ -1,4 +1,6 @@
-# OpenKitchen
+#MOVED AND RENAMED
+
+The project is still going ahead, but for now work is moved to https://github.com/MasbiaSoupKitchenNetwork/open_pantry though the name and choices are far from final.
 
 A management system for soup kitchens and pantry programs to help people eat healthy meals with dignity
 
